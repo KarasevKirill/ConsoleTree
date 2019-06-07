@@ -33,9 +33,9 @@ namespace DNSTest
                 var file = files[i];
 
                 if (i == files.Length - 1 && folders.Length == 0)
-                    Console.WriteLine($"{line}└──{file.Name}{GetFileSize(file)}");
+                    Console.WriteLine($"{line}└──{file.Name}{GetFileSizeView(file)}");
                 else
-                    Console.WriteLine($"{line}├──{file.Name}{GetFileSize(file)}");
+                    Console.WriteLine($"{line}├──{file.Name}{GetFileSizeView(file)}");
             }
 
             currentDepth++;
@@ -62,7 +62,7 @@ namespace DNSTest
             return (item.Attributes & FileAttributes.Directory) == FileAttributes.Directory;
         }
 
-        private string GetFileSize(FileInfo file)
+        private string GetFileSizeView(FileInfo file)
         {
             if (!UseSize)
                 return "";
