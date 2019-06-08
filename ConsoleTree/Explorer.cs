@@ -57,11 +57,6 @@ namespace DNSTest
             }
         }
 
-        private bool IsFolder(FileSystemInfo item)
-        {
-            return (item.Attributes & FileAttributes.Directory) == FileAttributes.Directory;
-        }
-
         private string GetFileSizeView(FileInfo file)
         {
             if (!UseSize)
