@@ -38,24 +38,12 @@ namespace DNSTest
 
                 if (args[i] == "--help" || args[i] == "-?")
                 {
-                    ShowHelp();
+                    explorer.ShowHelp();
                     return;
                 }
             }
 
             explorer.DisplayTree(Environment.CurrentDirectory);
-        }
-
-        private static void ShowHelp()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Консольное приложение, которые выводит содержимое текущего и вложенных каталогов в виде дерева");
-            Console.WriteLine("Дополнительные агрументы при запуске приложения:");
-            Console.WriteLine("-d или --depth - задать глубину вложенности. Сама глубина задается целым числом, указываемым после аргумента");
-            Console.WriteLine("-s или --size - отображать размер файлов");
-            Console.WriteLine("-h или --human-readable - отображать размер файлов в удобном для восприятия виде");
-            Console.WriteLine("--help или -? - справка");
-            Console.ResetColor();
         }
     }
 }
