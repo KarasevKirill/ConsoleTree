@@ -70,9 +70,6 @@ namespace DNSTest
 
         private string GetFileSize(long length)
         {
-            if (!UseReadable)
-                return length.ToString();
-
             var suf = new string[] { " B", " KB", " MB", " GB", " TB" };
 
             if (length == 0)
