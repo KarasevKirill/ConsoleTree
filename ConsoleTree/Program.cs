@@ -19,7 +19,6 @@ namespace DNSTest
                         int depth = Convert.ToInt32(args[i + 1]);
 
                         explorer.Depth = depth;
-
                     }
                     catch
                     {
