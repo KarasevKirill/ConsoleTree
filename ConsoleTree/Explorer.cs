@@ -81,7 +81,7 @@ namespace DNSTest
 
             var num = Math.Round(bytes / Math.Pow(1024, place), 1);
 
-            return $"{(Math.Sign(length) * num)}{suf[place]}";
+            return $"{num}{suf[place]}";
         }
 
         public void ShowHelp()
