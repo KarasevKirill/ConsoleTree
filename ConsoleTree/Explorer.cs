@@ -75,13 +75,22 @@ namespace DNSTest
             if (length == 0)
                 return "empty";
 
-            var bytes = Math.Abs(length);
+            var result = 0M;
+            var index = 0;
 
-            var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            if (length < 1024)
+                result = length;
 
-            var num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            while (length > 1024)
+            {
+                result = Math.Round((decimal)length / 1024, 2);
 
-            return $"{num}{suf[place]}";
+                length = (long)result;
+
+                index++;
+            }
+
+            return $"{result}{suf[index]}";
         }
 
         public void ShowHelp()
